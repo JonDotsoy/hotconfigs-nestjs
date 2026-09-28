@@ -6,15 +6,13 @@ NestJS integration for [`hotconfigs`](https://github.com/JonDotsoy/configs) — 
 ```ts
 import { Module } from "@nestjs/common";
 import { create, string } from "hotconfigs";
-import { CatsController } from "./cats/cats.controller.js";
-import { HotconfigsService } from "./hotconfigs.service.js";
+import { HotconfigsService } from "hotconfigs-nestjs";
 
 @Module({
-  controllers: [CatsController],
   providers: [
     HotconfigsService.load(
       create({
-        greeting: string({ summary: "greeting sent to /cats", default: "hello" }),
+        greeting: string({ summary: "greeting sent to consumers", default: "hello" }),
       }),
     ),
   ],

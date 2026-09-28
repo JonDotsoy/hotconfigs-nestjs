@@ -3,17 +3,15 @@ import { describe, expect, test } from "bun:test";
 import { Module } from "@nestjs/common";
 import { Test } from "@nestjs/testing";
 import { create, string } from "hotconfigs";
-import { CatsController } from "./cats/cats.controller.js";
-import { HotconfigsService } from "./hotconfigs.service.js";
+import { HotconfigsService } from "../src/hotconfigs.service.js";
 
 describe("HotconfigsService.load(create(...))", () => {
   test("provides a resolved HotconfigsService to the module", async () => {
     const shape = {
-      greeting: string({ summary: "greeting sent to /cats", default: "hello" }),
+      greeting: string({ summary: "greeting sent to consumers", default: "hello" }),
     };
 
     @Module({
-      controllers: [CatsController],
       providers: [HotconfigsService.load(create(shape))],
     })
     class AppModule {}
@@ -26,9 +24,6 @@ describe("HotconfigsService.load(create(...))", () => {
 
     expect(hotconfigs).toBeInstanceOf(HotconfigsService);
     expect(hotconfigs.configs.greeting.get()).toBe("hello");
-
-    const catsController = moduleRef.get(CatsController);
-    expect(catsController.findAll()).toEqual({ greeting: "hello" });
 
     await moduleRef.close();
   });
