@@ -1,0 +1,29 @@
+{
+  "name": "hotconfigs-nestjs",
+  "version": "0.0.0",
+  "module": "src/index.ts",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "build": "bun scripts/build.ts"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^12.1.1",
+    "@nestjs/core": "^12.1.1",
+    "@nestjs/testing": "^12.1.1",
+    "@types/bun": "latest",
+    "hotconfigs": "^1.0.6"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^12.1.1",
+    "@nestjs/core": "^12.1.1",
+    "hotconfigs": "^1.0.6",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  }
+}
