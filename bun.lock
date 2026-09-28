@@ -5,17 +5,20 @@
     "": {
       "name": "init",
       "dependencies": {
-        "@nestjs/common": "^12.1.1",
-        "@nestjs/core": "^12.1.1",
-        "hotconfigs": "^1.0.6",
         "reflect-metadata": "^0.2.2",
         "rxjs": "^7.8.2",
       },
       "devDependencies": {
+        "@nestjs/common": "^12.1.1",
+        "@nestjs/core": "^12.1.1",
         "@nestjs/testing": "^12.1.1",
         "@types/bun": "latest",
+        "hotconfigs": "^1.0.6",
       },
       "peerDependencies": {
+        "@nestjs/common": "^12.1.1",
+        "@nestjs/core": "^12.1.1",
+        "hotconfigs": "^1.0.6",
         "typescript": "^5",
       },
     },
